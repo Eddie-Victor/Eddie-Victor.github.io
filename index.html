@@ -643,7 +643,8 @@
         <h1>Rigor técnico e processos. Agora, na engenharia de software.</h1>
         <p class="lead">Sou <strong>Eddie Victor de Andrade Pereira</strong>, Desenvolvedor de Software Júnior. Uno
           vivência técnica em mecatrônica e processos industriais na Embraer e Senac ao desenvolvimento de
-          <strong>interfaces web acessíveis, padrões W3C, automações e manipulação de dados com Python</strong>.</p>
+          <strong>interfaces web acessíveis, padrões W3C, automações e manipulação de dados com Python</strong>.
+        </p>
         <div class="actions">
           <a class="btn primary" href="#projetos">Ver projetos</a>
           <a class="btn" href="https://github.com/Eddie-Victor" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -677,7 +678,8 @@
               performance impecável (Google Lighthouse 100%) e criação de automações e scripts eficientes em Python.</p>
             <p>Atualmente estou me especializando em <strong>Técnico em Informática no SENAC</strong> e cursando
               <strong>Bacharelado em Administração na UNIVESP</strong>, buscando oportunidades para somar disciplina
-              analítica, automação e qualidade técnica em equipes de desenvolvimento.</p>
+              analítica, automação e qualidade técnica em equipes de desenvolvimento.
+            </p>
           </div>
           <dl class="facts">
             <div>
@@ -865,7 +867,7 @@
           automações. O jeito mais rápido de falar comigo é por e-mail ou LinkedIn.</p>
         <div class="actions">
           <a class="btn primary" href="mailto:eddievictor123@gmail.com">Enviar e-mail</a>
-          <a class="btn" href="https://www.linkedin.com/in/eddievictor" target="_blank"
+          <a class="btn" href="https://www.linkedin.com/in/eddie-victor-2075b0267" target="_blank"
             rel="noopener noreferrer">LinkedIn</a>
           <a class="btn" href="https://github.com/Eddie-Victor" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
@@ -967,6 +969,35 @@
       el("circle", { cx: nx, cy: ny, r: 6 }, f);
       var ft = el("text", { x: nx - 12, y: ny - 14, "text-anchor": "end" }, f);
       ft.textContent = "Software & Automação";
+    })();
+
+    // Webhook de notificação por e-mail ao clicar nos links do LinkedIn
+    (function initLinkedinWebhook() {
+      function attachListener() {
+        var links = document.querySelectorAll('a[href*="linkedin.com"]');
+        links.forEach(function (link) {
+          link.addEventListener('click', function () {
+            var formData = new FormData();
+            formData.append('access_key', '1e2b1e09-5166-4645-8301-9ae48cc25d3a');
+            formData.append('subject', '🚀 Alerta: Alguém clicou no seu LinkedIn pelo Portfólio!');
+            formData.append('from_name', 'Portfólio Eddie Victor');
+            formData.append('message', 'Um visitante acabou de clicar no seu botão do LinkedIn no portfólio às ' + new Date().toLocaleString('pt-BR') + ' (URL: ' + window.location.href + ').');
+
+            fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              body: formData
+            }).catch(function (err) {
+              console.error('Erro ao disparar webhook:', err);
+            });
+          });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attachListener);
+      } else {
+        attachListener();
+      }
     })();
   </script>
 </body>
