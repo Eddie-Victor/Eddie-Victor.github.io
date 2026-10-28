@@ -1,26 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eddie Victor | Desenvolvedor de Software Júnior</title>
-
-  <!-- SEO Técnico Essencial -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eddie Victor — Desenvolvedor de Software Júnior | Front-End &amp; Automações</title>
   <meta name="description"
-    content="Portfólio profissional de Eddie Victor, Desenvolvedor Júnior especializado em HTML semântico, CSS moderno, JavaScript, Python e automações web.">
-  <meta name="robots" content="index, follow">
+    content="Portfólio de Eddie Victor de Andrade Pereira, Desenvolvedor de Software Júnior. HTML5 semântico, CSS3, JavaScript, Python, automação e padrões W3C.">
   <link rel="canonical" href="https://Eddie-Victor.github.io/">
 
-  <!-- Open Graph / Metais Sociais -->
-  <meta property="og:type" content="profile">
-  <meta property="og:title" content="Eddie Victor | Desenvolvedor de Software Júnior">
-  <meta property="og:description"
-    content="Portfólio técnico focado em desenvolvimento web ágil, padrões W3C, acessibilidade e automação.">
-  <meta property="og:url" content="https://Eddie-Victor.github.io/">
-  <meta property="og:locale" content="pt_BR">
+  <!-- Google Fonts: Archivo & IBM Plex Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet">
 
-  <!-- GEO (Generative Engine Optimization) & LLM Snippets via Schema.org -->
+  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -29,95 +25,950 @@
       "@type": "Person",
       "name": "Eddie Victor de Andrade Pereira",
       "jobTitle": "Desenvolvedor de Software Júnior",
-      "description": "Desenvolvedor especializado em front-end com foco em padrões W3C, acessibilidade, performance Lighthouse e automação com Python.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Araraquara",
         "addressRegion": "SP",
         "addressCountry": "BR"
       },
-      "knowsAbout": [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "Python",
-        "Git",
-        "W3C Standards",
-        "Acessibilidade Web (a11y)",
-        "SEO Técnico"
-      ],
       "sameAs": [
         "https://github.com/Eddie-Victor",
-        "https://linkedin.com/in/seu-perfil"
+        "https://www.linkedin.com/in/eddievictor"
       ]
     }
   }
   </script>
 
-  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --bg: #F1F4F4;
+      --surface: #FFFFFF;
+      --ink: #14232E;
+      --muted: #56656E;
+      --rule: #CCD6D9;
+      --accent: #0E7C86;
+      --accent-soft: #D3EBEC;
+      --event: #C99700;
+      --event-dot: #E8B500;
+      --display: "Archivo", system-ui, sans-serif;
+      --body: "IBM Plex Sans", system-ui, sans-serif;
+      --wrap: 1080px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0F1A21;
+        --surface: #15232C;
+        --ink: #E6EDEF;
+        --muted: #93A3AB;
+        --rule: #2A3A44;
+        --accent: #3CC4CE;
+        --accent-soft: #173840;
+        --event: #F2C94C;
+        --event-dot: #F2C94C;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 400 17px/1.6 var(--body);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-underline-offset: 3px;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .wrap {
+      max-width: var(--wrap);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    @media (max-width: 600px) {
+      .wrap {
+        padding: 0 16px;
+      }
+    }
+
+    /* Topo */
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 0;
+      gap: 16px;
+    }
+
+    .top .mark {
+      font: 700 17px/1 var(--display);
+      font-stretch: 85%;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .top nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .top nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color .2s;
+    }
+
+    .top nav a:hover {
+      color: var(--ink);
+    }
+
+    @media (max-width: 640px) {
+      .top nav {
+        display: none;
+      }
+    }
+
+    /* Hero */
+    .hero {
+      padding: 56px 0 24px;
+    }
+
+    .hero h1 {
+      font: 800 clamp(42px, 7.5vw, 92px)/.94 var(--display);
+      font-stretch: 72%;
+      letter-spacing: -.01em;
+      margin: 0;
+      max-width: 13ch;
+    }
+
+    .hero .lead {
+      font-size: clamp(18px, 2.2vw, 21px);
+      line-height: 1.5;
+      color: var(--muted);
+      max-width: 58ch;
+      margin: 26px 0 0;
+    }
+
+    .hero .lead strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: 15px;
+      text-decoration: none;
+      border: 1.5px solid var(--ink);
+      color: var(--ink);
+      transition: background .2s, border-color .2s, color .2s;
+    }
+
+    .btn.primary {
+      background: var(--ink);
+      color: var(--bg);
+    }
+
+    .btn:hover {
+      border-color: var(--accent);
+    }
+
+    .btn.primary:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    /* Linha do tempo / Gráfico Vetorial Interativo */
+    .trace {
+      margin: 56px 0 0;
+      padding: 28px 0 8px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .trace-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .trace-head h2 {
+      font: 700 22px/1.2 var(--display);
+      font-stretch: 90%;
+      margin: 0;
+    }
+
+    .trace-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 48ch;
+    }
+
+    .trace-scroll {
+      overflow-x: auto;
+      margin-top: 18px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .swipe {
+      display: none;
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      .swipe {
+        display: block;
+      }
+    }
+
+    .trace svg {
+      display: block;
+      width: 100%;
+      min-width: 760px;
+      height: auto;
+    }
+
+    .trace .grid line {
+      stroke: var(--rule);
+      stroke-width: 1;
+    }
+
+    .trace .axis text {
+      fill: var(--muted);
+      font: 500 12px var(--body);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .trace .line {
+      fill: none;
+      stroke: var(--ink);
+      stroke-width: 1.8;
+      stroke-linejoin: round;
+    }
+
+    .trace .line.next {
+      stroke: var(--accent);
+      stroke-width: 2.6;
+    }
+
+    .trace .ev circle {
+      fill: var(--event-dot);
+      stroke: var(--bg);
+      stroke-width: 2;
+    }
+
+    .trace .ev line {
+      stroke: var(--event);
+      stroke-width: 1;
+      stroke-dasharray: 2 3;
+    }
+
+    .trace .ev text {
+      fill: var(--ink);
+      font: 600 12.5px var(--body);
+    }
+
+    .trace .ev text.role {
+      fill: var(--muted);
+      font-weight: 400;
+      font-size: 11.5px;
+    }
+
+    .trace .ev.final circle {
+      fill: var(--accent);
+    }
+
+    .trace .ev.final text {
+      fill: var(--accent);
+      font-weight: 700;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .trace .draw {
+        stroke-dasharray: var(--len);
+        stroke-dashoffset: var(--len);
+        animation: draw 2.4s cubic-bezier(.4, 0, .2, 1) .2s forwards;
+      }
+
+      .trace .ev {
+        opacity: 0;
+        animation: show .4s ease forwards;
+        animation-delay: var(--d);
+      }
+
+      @keyframes draw {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes show {
+        to {
+          opacity: 1;
+        }
+      }
+    }
+
+    /* Seções Comuns */
+    section {
+      padding: 72px 0 0;
+    }
+
+    .sec-title {
+      font: 800 clamp(30px, 4.4vw, 44px)/1 var(--display);
+      font-stretch: 78%;
+      margin: 0 0 28px;
+    }
+
+    .cols {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    @media (max-width: 820px) {
+      .cols {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    .prose p {
+      margin: 0 0 1em;
+      max-width: 62ch;
+    }
+
+    .facts {
+      margin: 0;
+      padding: 22px 0 0;
+      border-top: 3px solid var(--accent);
+    }
+
+    .facts div {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 15px;
+    }
+
+    .facts dt {
+      color: var(--muted);
+    }
+
+    .facts dd {
+      margin: 0;
+      font-weight: 500;
+      text-align: right;
+    }
+
+    /* Projetos */
+    .projects {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--ink);
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) auto;
+      gap: 32px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .project h3 {
+      font: 700 23px/1.15 var(--display);
+      font-stretch: 88%;
+      margin: 0;
+    }
+
+    .project .origin {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .project p {
+      margin: 0;
+      max-width: 52ch;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tags li {
+      font-size: 13px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--ink);
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 820px) {
+      .project {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .links {
+        flex-direction: row;
+        gap: 18px;
+      }
+    }
+
+    /* Habilidades */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 56px;
+    }
+
+    .skill {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .skill h3 {
+      font: 700 18px/1.2 var(--display);
+      font-stretch: 92%;
+      margin: 0 0 6px;
+    }
+
+    .skill p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+
+    @media (max-width: 700px) {
+      .skills {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Formação */
+    .edu {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 56px;
+    }
+
+    @media (max-width: 820px) {
+      .edu {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    .edu h3 {
+      font: 600 15px/1.3 var(--body);
+      color: var(--muted);
+      margin: 0 0 8px;
+    }
+
+    .list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .list li {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .list strong {
+      display: block;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .list span {
+      display: block;
+      color: var(--muted);
+      font-size: 14.5px;
+      margin-top: 3px;
+    }
+
+    .score {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Experiência */
+    .jobs {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .job {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 24px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .job time {
+      color: var(--muted);
+      font-size: 14.5px;
+      font-variant-numeric: tabular-nums;
+      padding-top: 2px;
+    }
+
+    .job h3 {
+      font: 700 19px/1.25 var(--display);
+      font-stretch: 92%;
+      margin: 0;
+    }
+
+    .job h3 span {
+      font: 400 16px var(--body);
+      color: var(--muted);
+    }
+
+    .job p {
+      margin: 6px 0 0;
+      max-width: 64ch;
+      font-size: 15.5px;
+    }
+
+    @media (max-width: 600px) {
+      .job {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+
+    /* Contato */
+    .contact {
+      margin: 88px 0 0;
+      padding: 56px 0 64px;
+      border-top: 1px solid var(--ink);
+    }
+
+    .contact h2 {
+      font: 800 clamp(36px, 6vw, 64px)/.98 var(--display);
+      font-stretch: 74%;
+      margin: 0;
+      max-width: 16ch;
+    }
+
+    .contact p {
+      color: var(--muted);
+      max-width: 52ch;
+      margin: 18px 0 0;
+    }
+
+    footer {
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 13.5px;
+      border-top: 1px solid var(--rule);
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Skip Link para 100% de Acessibilidade (Lighthouse) -->
-  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
 
-  <header class="hero" role="banner">
-    <div class="container">
-      <h1>Eddie Victor</h1>
-      <p class="subtitle">Desenvolvedor de Software Júnior</p>
-      <nav aria-label="Navegação principal">
-        <ul class="nav-links">
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#habilidades">Habilidades</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
+  <div class="wrap">
+    <header class="top">
+      <a class="mark" href="#">Eddie Victor</a>
+      <nav aria-label="Seções">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#formacao">Formação</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#contato">Contato</a>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <main id="conteudo-principal" class="container">
-    <section id="sobre" aria-labelledby="sobre-titulo">
-      <h2 id="sobre-titulo">Sobre Mim</h2>
-      <p>Desenvolvedor focado em interfaces web semânticas, acessibilidade digital e desenvolvimento de código com alta
-        eficiência e rastreabilidade técnica.</p>
-    </section>
+    <main>
+      <div class="hero">
+        <h1>Rigor técnico e processos. Agora, na engenharia de software.</h1>
+        <p class="lead">Sou <strong>Eddie Victor de Andrade Pereira</strong>, Desenvolvedor de Software Júnior. Uno
+          vivência técnica em mecatrônica e processos industriais na Embraer e Senac ao desenvolvimento de
+          <strong>interfaces web acessíveis, padrões W3C, automações e manipulação de dados com Python</strong>.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projetos">Ver projetos</a>
+          <a class="btn" href="https://github.com/Eddie-Victor" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/eddievictor" target="_blank"
+            rel="noopener noreferrer">LinkedIn</a>
+        </div>
 
-    <section id="habilidades" aria-labelledby="hab-titulo">
-      <h2 id="hab-titulo">Habilidades Técnicas</h2>
-      <ul class="tag-list">
-        <li>HTML5 Semântico (W3C)</li>
-        <li>CSS3 Responsivo</li>
-        <li>JavaScript Moderno (ES6+)</li>
-        <li>Python & Automação</li>
-        <li>Git / GitHub</li>
-      </ul>
-    </section>
+        <figure class="trace" aria-labelledby="trace-title">
+          <div class="trace-head">
+            <h2 id="trace-title">Linha de evolução e trajetória técnica</h2>
+            <p>Da precisão da mecatrônica e gestão à automação e desenvolvimento de software.</p>
+          </div>
+          <div class="trace-scroll">
+            <svg id="timeline-svg" viewBox="0 0 1000 300" role="img"
+              aria-label="Linha do tempo de 2016 a 2026: SENAI Mecatrônica em 2016, SENAC Administração em 2023, Embraer PPCP em 2024, SENAC TI e Agente Técnico em 2024 até o foco pleno em Desenvolvimento de Software em 2026."></svg>
+          </div>
+          <p class="swipe">Arraste para o lado para ver a linha do tempo completa.</p>
+        </figure>
+      </div>
 
-    <section id="projetos" aria-labelledby="proj-titulo">
-      <h2 id="proj-titulo">Projetos</h2>
-      <article class="card">
-        <h3>Web Portfólio de Alta Performance</h3>
-        <p>Estrutura estática com 100% de pontuação no Google Lighthouse e indexação semântica estruturada.</p>
-        <a href="https://github.com/Eddie-Victor/Eddie-Victor.github.io" target="_blank" rel="noopener noreferrer">Ver
-          no GitHub</a>
-      </article>
-    </section>
+      <section id="sobre">
+        <h2 class="sec-title">Sobre mim</h2>
+        <div class="cols">
+          <div class="prose">
+            <p>Minha formação começou no rigor técnico da Mecatrônica no SENAI, onde aprendi a lidar com lógica
+              estruturada, sensores, circuitos e controle de processos críticos. Essa visão prática me acompanhou na
+              vivência corporativa na <strong>Embraer</strong> (PPCP / Logística) e no <strong>Senac</strong>, atuando
+              no planejamento operacional, controle e rastreabilidade sob normas rigorosas.</p>
+            <p>No desenvolvimento de software, aplico essa mesma obsessão por conformidade e precisão: código limpo,
+              HTML5 semântico rigorosamente validado pelos padrões do W3C, acessibilidade real (WCAG / a11y),
+              performance impecável (Google Lighthouse 100%) e criação de automações e scripts eficientes em Python.</p>
+            <p>Atualmente estou me especializando em <strong>Técnico em Informática no SENAC</strong> e cursando
+              <strong>Bacharelado em Administração na UNIVESP</strong>, buscando oportunidades para somar disciplina
+              analítica, automação e qualidade técnica em equipes de desenvolvimento.</p>
+          </div>
+          <dl class="facts">
+            <div>
+              <dt>Localização</dt>
+              <dd>Araraquara, SP</dd>
+            </div>
+            <div>
+              <dt>Foco atual</dt>
+              <dd>Front-End &amp; Automação Python</dd>
+            </div>
+            <div>
+              <dt>Graduação</dt>
+              <dd>Bacharelado em Administração (UNIVESP)</dd>
+            </div>
+            <div>
+              <dt>Formação técnica</dt>
+              <dd>Informática (SENAC) &amp; Mecatrônica (SENAI)</dd>
+            </div>
+            <div>
+              <dt>Experiência corporativa</dt>
+              <dd>Embraer &amp; Senac SP</dd>
+            </div>
+            <div>
+              <dt>Disponibilidade</dt>
+              <dd>Presencial, híbrido ou remoto</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
 
-    <section id="contato" aria-labelledby="contato-titulo">
-      <h2 id="contato-titulo">Contato</h2>
-      <p>Disponível para oportunidades técnicas e projetos colaborativos.</p>
-      <a href="mailto:eddievictor123@gmail.com" class="btn">Enviar E-mail</a>
-    </section>
-  </main>
+      <section id="projetos">
+        <h2 class="sec-title">Projetos</h2>
+        <ul class="projects">
+          <li class="project">
+            <div>
+              <h3>Portfólio Web Otimizado &amp; Acessível</h3>
+              <span class="origin">Projeto próprio · Web Core</span>
+            </div>
+            <div>
+              <p>Arquitetura estática desenvolvida com HTML5 semântico, CSS puro e JavaScript moderno, atingindo 100% de
+                pontuação em todas as métricas do Google Lighthouse. Metadados para SEO Técnico e Schema.org para
+                indexação semântica e IA (GEO).</p>
+              <ul class="tags">
+                <li>HTML5 Semântico</li>
+                <li>CSS3 Moderno</li>
+                <li>JavaScript ES6+</li>
+                <li>WCAG / a11y</li>
+                <li>Lighthouse 100%</li>
+              </ul>
+            </div>
+            <div class="links">
+              <a href="https://Eddie-Victor.github.io/" target="_blank" rel="noopener noreferrer">Ver online</a>
+              <a href="https://github.com/Eddie-Victor/Eddie-Victor.github.io" target="_blank"
+                rel="noopener noreferrer">Ver código</a>
+            </div>
+          </li>
 
-  <footer role="contentinfo">
-    <div class="container">
-      <p>&copy; 2026 Eddie Victor. Desenvolvido sob especificações W3C.</p>
-    </div>
-  </footer>
+          <li class="project">
+            <div>
+              <h3>Automações e Scripts de Dados em Python</h3>
+              <span class="origin">Automação &amp; Dados</span>
+            </div>
+            <div>
+              <p>Desenvolvimento de rotinas para consumo e parsing de dados via APIs REST, com geração automatizada de
+                relatórios operacionais, planilhas e integração de rotinas de cadastramento sem inconsistências.</p>
+              <ul class="tags">
+                <li>Python</li>
+                <li>REST APIs</li>
+                <li>JSON Parsing</li>
+                <li>Automação</li>
+              </ul>
+            </div>
+            <div class="links">
+              <a href="https://github.com/Eddie-Victor" target="_blank" rel="noopener noreferrer">Ver projetos</a>
+            </div>
+          </li>
+        </ul>
+      </section>
 
-  <script src="script.js" defer></script>
+      <section id="habilidades">
+        <h2 class="sec-title">Habilidades</h2>
+        <div class="skills">
+          <div class="skill">
+            <h3>Front-End &amp; Padrões Web</h3>
+            <p>HTML5 Semântico, CSS3 responsivo, JavaScript moderno (ES6+), conformidade com diretrizes do W3C e
+              acessibilidade digital (WCAG).</p>
+          </div>
+          <div class="skill">
+            <h3>Automação &amp; Backend Básico</h3>
+            <p>Python para automação de processos, consumo de APIs REST, manipulação de arquivos JSON/dados tabulares e
+              SQL básico.</p>
+          </div>
+          <div class="skill">
+            <h3>Qualidade &amp; Performance</h3>
+            <p>Google Lighthouse (100% Performance, Acessibilidade, Melhores Práticas e SEO), SEO Técnico e Schema.org
+              para IA (GEO).</p>
+          </div>
+          <div class="skill">
+            <h3>Versionamento &amp; Ferramentas</h3>
+            <p>Git, GitHub, GitHub Pages, VS Code e ambientes operacionais modernos.</p>
+          </div>
+          <div class="skill">
+            <h3>Visão de Processos &amp; Qualidade</h3>
+            <p>Mapeamento de fluxos, eliminação de gargalos operacionais, rigor analítico, rastreabilidade e metodologia
+              5S.</p>
+          </div>
+          <div class="skill">
+            <h3>Forma de Trabalhar</h3>
+            <p>Atenção aos detalhes, foco em código limpo, documentação clara, adaptabilidade e comunicação ágil.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="formacao">
+        <h2 class="sec-title">Formação acadêmica</h2>
+        <div class="edu">
+          <div>
+            <h3>Educação</h3>
+            <ul class="list">
+              <li>
+                <strong>Técnico em Informática</strong>
+                <span>SENAC Araraquara · Previsão de conclusão: 11/2026</span>
+              </li>
+              <li>
+                <strong>Bacharelado em Administração</strong>
+                <span>UNIVESP · Previsão de conclusão: 2029</span>
+              </li>
+              <li>
+                <strong>Técnico em Administração</strong>
+                <span>SENAC Araraquara · Concluído em 2024</span>
+              </li>
+              <li>
+                <strong>Técnico em Mecatrônica</strong>
+                <span>SENAI "Henrique Lupo" Araraquara · 2016 – 2018</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3>Metodologias e Padrões</h3>
+            <ul class="list">
+              <li>
+                <strong>Padrões W3C &amp; Acessibilidade Web</strong>
+                <span>Desenvolvimento aderente a normas internacionais de acessibilidade e semântica</span>
+              </li>
+              <li>
+                <strong>Web Performance &amp; SEO Técnico</strong>
+                <span>Arquitetura semântica focada em métricas <b class="score">Core Web Vitals</b></span>
+              </li>
+              <li>
+                <strong>Controle de Qualidade e Processos</strong>
+                <span>Metodologias 5S, rastreabilidade operacional e análise metódica</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="experiencia">
+        <h2 class="sec-title">Experiência profissional</h2>
+        <ul class="jobs">
+          <li class="job">
+            <time>10/2024 – Atual</time>
+            <div>
+              <h3>SENAC Araraquara <span>Agente Técnico Administrativo</span></h3>
+              <p>Estruturação de planilhas de controle e automação de fluxos de cadastramento em sistemas internos
+                corporativos. Otimização do processamento de contratos e rotinas de compras, reduzindo inconsistências
+                operacionais.</p>
+            </div>
+          </li>
+          <li class="job">
+            <time>02/2024 – 10/2024</time>
+            <div>
+              <h3>EMBRAER S.A. <span>Estagiário de PPCP / Logística</span></h3>
+              <p>Análise metódica de demandas técnicas, emissão de Ordens de Produção (OP/OM) e controle rigoroso de
+                inventário. Aplicação de disciplina de processos industriais, metodologia 5S e rastreabilidade técnica.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="contact" id="contato">
+        <h2>Vamos conversar sobre desenvolvimento?</h2>
+        <p>Estou disponível para vagas de Desenvolvedor Júnior, estágios ou projetos colaborativos em Front-End e
+          automações. O jeito mais rápido de falar comigo é por e-mail ou LinkedIn.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:eddievictor123@gmail.com">Enviar e-mail</a>
+          <a class="btn" href="https://www.linkedin.com/in/eddievictor" target="_blank"
+            rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn" href="https://github.com/Eddie-Victor" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer-ano">
+      Eddie Victor de Andrade Pereira · Araraquara, SP · (16) 98195-9248
+    </footer>
+  </div>
+
+  <script>
+    // Gráfico vetorial de linha do tempo adaptado para a trajetória de Eddie Victor
+    (function () {
+      var events = [
+        { y: 2016.0, name: "SENAI", role: "Técnico Mecatrônica", row: 0 },
+        { y: 2018.0, name: "SENAI", role: "Conclusão Mecatrônica", row: 1 },
+        { y: 2023.0, name: "SENAC", role: "Téc. Administração", row: 0 },
+        { y: 2024.1, name: "EMBRAER", role: "PPCP / Logística", row: 1 },
+        { y: 2024.7, name: "SENAC", role: "Agente Técnico / TI", row: 0 },
+        { y: 2025.2, name: "UNIVESP", role: "Bacharelado Admin.", row: 1 },
+        { y: 2026.0, name: "Software", role: "Dev Jr / Front-End", row: 0 }
+      ];
+
+      var svg = document.getElementById("timeline-svg");
+      if (!svg) return;
+      var NS = "http://www.w3.org/2000/svg";
+      var x0 = 40, x1 = 900;
+      var X = function (y) { return x0 + (y - 2016) * (x1 - x0) / 10; };
+      var top = 70, slope = 0.085;
+
+      function el(n, a, p) {
+        var e = document.createElementNS(NS, n);
+        for (var k in a) e.setAttribute(k, a[k]);
+        (p || svg).appendChild(e);
+        return e;
+      }
+
+      // Grade e eixo de anos (2016 a 2026)
+      var g = el("g", { class: "grid" }), ax = el("g", { class: "axis" });
+      for (var yr = 2016; yr <= 2026; yr += 2) {
+        el("line", { x1: X(yr), x2: X(yr), y1: 30, y2: 200 }, g);
+        var t = el("text", { x: X(yr), y: 222, "text-anchor": "middle" }, ax);
+        t.textContent = yr;
+      }
+
+      // Linha contínua do tempo
+      var d = "M" + x0 + " " + (top - 38) + " L" + (x0 + 4) + " " + (top - 38) + " L" + (x0 + 10) + " " + top;
+      var y = top, drop = 0;
+
+      events.forEach(function (e, i) {
+        var x = X(e.y);
+        if (i === 0) { e.px = x0 + 10; e.py = top; return; }
+        y = top + (x - x0) * slope + drop;
+        d += " L" + x + " " + y;
+        e.px = x; e.py = y;
+        if (i % 2 === 0) {
+          d += " L" + (x + 2) + " " + (y - 14) + " L" + (x + 5) + " " + (y + 5);
+          y += 5;
+        } else {
+          d += " L" + (x + 1) + " " + (y + 4);
+          y += 4;
+        }
+        drop += 4;
+      });
+
+      var endX = X(2026) + 2;
+      var path = el("path", { class: "line draw", d: d });
+
+      // Curva final de destaque: Software & Automações
+      var nx = 965, ny = 45;
+      var next = el("path", {
+        class: "line next draw",
+        d: "M" + endX + " " + y + " C" + (endX + 30) + " " + y + " " + (nx - 30) + " " + (ny + 30) + " " + nx + " " + ny
+      });
+
+      var L = path.getTotalLength(), L2 = next.getTotalLength();
+      path.style.setProperty("--len", L);
+      next.style.setProperty("--len", L2);
+      next.style.animationDelay = "2.4s";
+      next.style.animationDuration = ".8s";
+
+      // Eventos e marcadores
+      events.forEach(function (e, i) {
+        var gg = el("g", { class: "ev" });
+        gg.style.setProperty("--d", (0.3 + 2.0 * (e.px - x0) / (x1 - x0)) + "s");
+        var ly = e.row ? 272 : 246;
+        el("line", { x1: e.px, x2: e.px, y1: e.py + 6, y2: ly - 14 }, gg);
+        el("circle", { cx: e.px, cy: e.py, r: 4.5 }, gg);
+        var a = (i === 0) ? "start" : "middle";
+        var t1 = el("text", { x: e.px, y: ly, "text-anchor": a }, gg);
+        t1.textContent = e.name;
+        var t2 = el("text", { x: e.px, y: ly + 13, "text-anchor": a, class: "role" }, gg);
+        t2.textContent = e.role;
+      });
+
+      var f = el("g", { class: "ev final" });
+      f.style.setProperty("--d", "3.2s");
+      el("circle", { cx: nx, cy: ny, r: 6 }, f);
+      var ft = el("text", { x: nx - 12, y: ny - 14, "text-anchor": "end" }, f);
+      ft.textContent = "Software & Automação";
+    })();
+  </script>
 </body>
 
 </html>
